@@ -549,12 +549,16 @@ $(document).ready(function() {
 function editFunc(id)
 { 
   $.ajax({
-    url: base_url + 'stores/fetchGroupsDataById/'+id,
+    url: base_url + 'groups/fetchGroupsDataById/'+id,
     type: 'post',
     dataType: 'json',
     success:function(response) {
+      
+      console.log(response);
 
-      $("#edit_store_name").val(response.name);
+      $("#edit_store_name").val(response.group_name);
+
+    <?php $group_data['permission']= 'response.permission'?>
 
       // submit the edit from 
       $("#updateForm").unbind('submit').bind('submit', function() {

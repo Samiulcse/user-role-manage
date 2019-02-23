@@ -103,7 +103,7 @@ class Groups extends Admin_Controller
     public function fetchGroupsDataById($id = null)
 	{
 		if($id) {
-			$data = $this->model_stores->getGroupData($id);
+			$data = $this->model_groups->getGroupData($id);
 			echo json_encode($data);
 		}
 		
