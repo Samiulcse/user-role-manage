@@ -23,12 +23,7 @@
           <?php endif;?>
           <!-- groups -->
           <?php if (in_array('createGroup', $user_permission) || in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>
-            <li class="treeview" id="groupMainNav">
-              <a href="#">
-                <i class="fa fa-files-o"></i>
-                <span>Groups</span>
-              </a>
-            </li>
+            <li id="groupMainNav"><a href="<?php echo base_url('groups/') ?>"><i class="fa fa-files-o"></i> <span>Groups</span></a></li>
           <?php endif;?>
 
           <!-- store -->
