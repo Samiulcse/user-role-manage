@@ -10,7 +10,7 @@ class MY_Controller extends CI_Controller
 
 class Admin_Controller extends MY_Controller
 {
-	public $permission = array();
+    public $permission = array();
 
     public function __construct()
     {
@@ -25,7 +25,13 @@ class Admin_Controller extends MY_Controller
             $session_data = array('logged_in' => false);
             $this->session->set_userdata($session_data);
         } else {
-            
+            $user_id = $this->session->userdata('id');
+            $this->load->model('model_groups');
+            $group_data = $this->model_groups->getUserGroupByUserId($user_id);
+
+            $this->data['user_permission'] = unserialize($group_data['permission']);
+
+            $this->permission = unserialize($group_data['permission']);
         }
     }
 
@@ -56,5 +62,4 @@ class Admin_Controller extends MY_Controller
         $this->load->view('templates/footer', $data);
     }
 
-    
 }
