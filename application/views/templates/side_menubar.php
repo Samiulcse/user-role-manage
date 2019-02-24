@@ -14,12 +14,7 @@
         <!-- users -->
         <?php if ($user_permission): ?>
           <?php if (in_array('createUser', $user_permission) || in_array('updateUser', $user_permission) || in_array('viewUser', $user_permission) || in_array('deleteUser', $user_permission)): ?>
-            <li class="treeview" id="userMainNav">
-              <a href="#">
-                <i class="fa fa-users"></i>
-                <span>Users</span>
-              </a>
-            </li>
+            <li id="userMainNav"><a href="<?php echo base_url('users/') ?>"><i class="fa fa-files-o"></i> <span>Users</span></a></li>
           <?php endif;?>
           <!-- groups -->
           <?php if (in_array('createGroup', $user_permission) || in_array('updateGroup', $user_permission) || in_array('viewGroup', $user_permission) || in_array('deleteGroup', $user_permission)): ?>

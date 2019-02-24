@@ -31,7 +31,7 @@ class Model_groups extends CI_Model
         return $result;
 
     }
-
+    // create
     public function create($data = array())
     {
         if ($data) {
@@ -39,7 +39,13 @@ class Model_groups extends CI_Model
             return ($create == true) ? true : false;
         }
     }
-
+    // update
+    public function update($data, $id)
+	{
+		$this->db->where('id', $id);
+		$update = $this->db->update('groups', $data);
+		return ($update == true) ? true : false;	
+	}
     // remove
     public function remove($id = null)
     {

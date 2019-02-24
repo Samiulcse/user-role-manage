@@ -20,6 +20,13 @@ class Model_stores extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    // fetch all active store
+    public function getActiveStores()
+    {
+        $sql = "SELECT * FROM stores WHERE active = ?";
+        $query = $this->db->query($sql, array(1));
+        return $query->result_array();
+    }
 
     // create
     public function create($data = array())
@@ -40,28 +47,28 @@ class Model_stores extends CI_Model
     }
     // remove
     public function remove($id = null)
-	{
-		if($id) {
-			$this->db->where('id', $id);
-			$delete = $this->db->delete('stores');
-			return ($delete == true) ? true : false;
-		}
+    {
+        if ($id) {
+            $this->db->where('id', $id);
+            $delete = $this->db->delete('stores');
+            return ($delete == true) ? true : false;
+        }
 
-		return false;
-	}
+        return false;
+    }
     // activeStore
-	public function getActiveStore()
-	{
-		$sql = "SELECT * FROM stores WHERE active = ?";
-		$query = $this->db->query($sql, array(1));
-		return $query->result_array();
-	}
+    public function getActiveStore()
+    {
+        $sql = "SELECT * FROM stores WHERE active = ?";
+        $query = $this->db->query($sql, array(1));
+        return $query->result_array();
+    }
     // totalStore
-	public function countTotalStores()
-	{
-		$sql = "SELECT * FROM stores WHERE active = ?";
-		$query = $this->db->query($sql, array(1));
-		return $query->num_rows();
-	}
+    public function countTotalStores()
+    {
+        $sql = "SELECT * FROM stores WHERE active = ?";
+        $query = $this->db->query($sql, array(1));
+        return $query->num_rows();
+    }
 
 }

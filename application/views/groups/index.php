@@ -207,8 +207,6 @@
           </div>
           <div class="form-group">
             <label for="permission">Permission</label>
-
-            <?php $serialize_permission = unserialize($group_data['permission']); ?>
             
             <table class="table table-responsive">
               <thead>
@@ -223,182 +221,64 @@
               <tbody>
                 <tr>
                   <td>Users</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createUser" <?php if($serialize_permission) {
-                    if(in_array('createUser', $serialize_permission)) { echo "checked"; } 
-                  } ?> ></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateUser" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateUser', $serialize_permission)) { echo "checked"; } 
-                  }
-                  ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewUser" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewUser', $serialize_permission)) { echo "checked"; }   
-                  }
-                  ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteUser" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteUser', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createUser" value="createUser" ></td>
+                  <td><input type="checkbox" name="permission[]" id="updateUser" value="updateUser"></td>
+                  <td><input type="checkbox" name="permission[]" id="viewUser" value="viewUser"></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteUser" value="deleteUser"></td>
                 </tr>
                 <tr>
                   <td>Groups</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createGroup" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createGroup', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateGroup" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateGroup', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewGroup" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewGroup', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteGroup" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteGroup', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createGroup" value="createGroup" ></td>
+                  <td><input type="checkbox" name="permission[]" id="updateGroup" value="updateGroup"></td>
+                  <td><input type="checkbox" name="permission[]" id="viewGroup" value="viewGroup" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteGroup" value="deleteGroup" ></td>
                 </tr>
                 <tr>
                   <td>Stores</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createStore" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createStore', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateStore" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateStore', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewStore" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewStore', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteStore" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteStore', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createStore" value="createStore" ></td>
+                  <td><input type="checkbox" name="permission[]" id="updateStore" value="updateStore" ></td>
+                  <td><input type="checkbox" name="permission[]" id="viewStore" value="viewStore" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteStore" value="deleteStore" ></td>
                 </tr>
                 <tr>
                   <td>Tables</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createTable" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createTable', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateTable" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateTable', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewTable" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewTable', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteTable" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteTable', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createTable" value="createTable" ></td>
+                  <td><input type="checkbox" name="permission[]" id="updateTable" value="updateTable"></td>
+                  <td><input type="checkbox" name="permission[]" id="viewTable" value="viewTable" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteTable" value="deleteTable"></td>
                 </tr>
                 <tr>
                   <td>Category</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createCategory" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createCategory', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateCategory" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateCategory', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewCategory" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewCategory', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteCategory" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteCategory', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createCategory" value="createCategory" ></td>
+                  <td><input type="checkbox" name="permission[]" id="updateCategory" value="updateCategory" ></td>
+                  <td><input type="checkbox" name="permission[]" id="viewCategory" value="viewCategory" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteCategory" value="deleteCategory" ></td>
                 </tr>
                 <tr>
                   <td>Product</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createProduct" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createProduct', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateProduct" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateProduct', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewProduct" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewProduct', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteProduct" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteProduct', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createProduct" value="createProduct"></td>
+                  <td><input type="checkbox" name="permission[]" id="updateProduct" value="updateProduct"></td>
+                  <td><input type="checkbox" name="permission[]" id="viewProduct" value="viewProduct" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteProduct" value="deleteProduct" ></td>
                 </tr>
                 <tr>
                   <td>Orders</td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="createOrder" <?php 
-                  if($serialize_permission) {
-                    if(in_array('createOrder', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateOrder" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateOrder', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewOrder" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewOrder', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="deleteOrder" <?php 
-                  if($serialize_permission) {
-                    if(in_array('deleteOrder', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="createOrder" value="createOrder"></td>
+                  <td><input type="checkbox" name="permission[]" id="updateOrder" value="updateOrder" ></td>
+                  <td><input type="checkbox" name="permission[]" id="viewOrder" value="viewOrder" ></td>
+                  <td><input type="checkbox" name="permission[]" id="deleteOrder" value="deleteOrder" ></td>
                 </tr>
                 <tr>
                   <td>Report</td>
                   <td> - </td>
                   <td> - </td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewReport" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewReport', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="viewReport" value="viewReport" ></td>
                   <td> - </td>
                 </tr>
                 <tr>
                   <td>Company</td>
                   <td> - </td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateCompany" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateCompany', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="updateCompany" value="updateCompany" ></td>
                   <td> - </td>
                   <td> - </td>
                 </tr>
@@ -406,21 +286,13 @@
                   <td>Profile</td>
                   <td> - </td>
                   <td> - </td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="viewProfile" <?php 
-                  if($serialize_permission) {
-                    if(in_array('viewProfile', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="viewProfile" value="viewProfile" ></td>
                   <td> - </td>
                 </tr>
                 <tr>
                   <td>Setting</td>
                   <td> - </td>
-                  <td><input type="checkbox" name="permission[]" id="permission" value="updateSetting" <?php 
-                  if($serialize_permission) {
-                    if(in_array('updateSetting', $serialize_permission)) { echo "checked"; }  
-                  }
-                    ?>></td>
+                  <td><input type="checkbox" name="permission[]" id="updateSetting" value="updateSetting" ></td>
                   <td> - </td>
                   <td> - </td>
                 </tr>
@@ -554,11 +426,117 @@ function editFunc(id)
     dataType: 'json',
     success:function(response) {
       
-      console.log(response);
+      // console.log(response.permission);
 
       $("#edit_store_name").val(response.group_name);
 
-    <?php $group_data['permission']= 'response.permission'?>
+      // Users
+      if($.inArray( 'createUser', response.permission) !== -1){
+        $("#createUser").prop("checked", true);
+      }
+      if($.inArray( 'updateUser', response.permission) !== -1){
+        $("#updateUser").prop("checked", true);
+      }
+      if($.inArray( 'viewUser', response.permission) !== -1){
+        $("#viewUser").prop("checked", true);
+      }
+      if($.inArray( 'deleteUser', response.permission) !== -1){
+        $("#deleteUser").prop("checked", true);
+      }
+      // Groups
+      if($.inArray( 'createGroup', response.permission) !== -1){
+        $("#createGroup").prop("checked", true);
+      }
+      if($.inArray( 'updateGroup', response.permission) !== -1){
+        $("#updateGroup").prop("checked", true);
+      }
+      if($.inArray( 'viewGroup', response.permission) !== -1){
+        $("#viewGroup").prop("checked", true);
+      }
+      if($.inArray( 'deleteGroup', response.permission) !== -1){
+        $("#deleteGroup").prop("checked", true);
+      }
+      // Stores
+      if($.inArray( 'createStore', response.permission) !== -1){
+        $("#createStore").prop("checked", true);
+      }
+      if($.inArray( 'updateStore', response.permission) !== -1){
+        $("#updateStore").prop("checked", true);
+      }
+      if($.inArray( 'viewStore', response.permission) !== -1){
+        $("#viewStore").prop("checked", true);
+      }
+      if($.inArray( 'deleteStore', response.permission) !== -1){
+        $("#deleteStore").prop("checked", true);
+      }
+      // Tables
+      if($.inArray( 'createTable', response.permission) !== -1){
+        $("#createTable").prop("checked", true);
+      }
+      if($.inArray( 'updateTable', response.permission) !== -1){
+        $("#updateTable").prop("checked", true);
+      }
+      if($.inArray( 'viewTable', response.permission) !== -1){
+        $("#viewTable").prop("checked", true);
+      }
+      if($.inArray( 'deleteTable', response.permission) !== -1){
+        $("#deleteTable").prop("checked", true);
+      }
+      // Category
+      if($.inArray( 'createCategory', response.permission) !== -1){
+        $("#createCategory").prop("checked", true);
+      }
+      if($.inArray( 'updateCategory', response.permission) !== -1){
+        $("#updateCategory").prop("checked", true);
+      }
+      if($.inArray( 'viewCategory', response.permission) !== -1){
+        $("#viewCategory").prop("checked", true);
+      }
+      if($.inArray( 'deleteCategory', response.permission) !== -1){
+        $("#deleteCategory").prop("checked", true);
+      }
+      // Product
+      if($.inArray( 'createProduct', response.permission) !== -1){
+        $("#createProduct").prop("checked", true);
+      }
+      if($.inArray( 'updateProduct', response.permission) !== -1){
+        $("#updateProduct").prop("checked", true);
+      }
+      if($.inArray( 'viewProduct', response.permission) !== -1){
+        $("#viewProduct").prop("checked", true);
+      }
+      if($.inArray( 'deleteProduct', response.permission) !== -1){
+        $("#deleteProduct").prop("checked", true);
+      }
+      // Orders
+      if($.inArray( 'createOrder', response.permission) !== -1){
+        $("#createOrder").prop("checked", true);
+      }
+      if($.inArray( 'updateOrder', response.permission) !== -1){
+        $("#updateOrder").prop("checked", true);
+      }
+      if($.inArray( 'viewOrder', response.permission) !== -1){
+        $("#viewOrder").prop("checked", true);
+      }
+      if($.inArray( 'deleteOrder', response.permission) !== -1){
+        $("#deleteOrder").prop("checked", true);
+      }
+      // Report
+      if($.inArray( 'viewReport', response.permission) !== -1){
+        $("#viewReport").prop("checked", true);
+      }
+      // Company
+      if($.inArray( 'updateCompany', response.permission) !== -1){
+        $("#updateCompany").prop("checked", true);
+      }
+      // Profile
+      if($.inArray( 'viewProfile', response.permission) !== -1){
+        $("#viewProfile").prop("checked", true);
+      }
+      // Setting
+      if($.inArray( 'updateSetting', response.permission) !== -1){
+        $("#updateSetting").prop("checked", true);
+      }
 
       // submit the edit from 
       $("#updateForm").unbind('submit').bind('submit', function() {
@@ -582,7 +560,7 @@ function editFunc(id)
                 '<strong> <span class="glyphicon glyphicon-ok-sign"></span> </strong>'+response.messages+
               '</div>');
 
-
+              console.log('Worked');
               // hide the modal
               $("#editModal").modal('hide');
               // reset the form 
@@ -593,7 +571,7 @@ function editFunc(id)
               if(response.messages instanceof Object) {
                 $.each(response.messages, function(index, value) {
                   var id = $("#"+index);
-
+                  console.log('Not Worked');
                   id.closest('.form-group')
                   .removeClass('has-error')
                   .removeClass('has-success')
@@ -603,6 +581,7 @@ function editFunc(id)
 
                 });
               } else {
+                console.log('Another Worked');
                 $("#messages").html('<div class="alert alert-warning alert-dismissible" role="alert">'+
                   '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
                   '<strong> <span class="glyphicon glyphicon-exclamation-sign"></span> </strong>'+response.messages+
