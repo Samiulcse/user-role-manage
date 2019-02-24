@@ -38,15 +38,15 @@ class Users extends Admin_Controller
             // button
             $buttons = '';
 
-            if (in_array('updateUser', $this->permission)) {
+            $group = $this->model_users->getUserGroup($value['id']);
+
+            if ((in_array('updateUser', $this->permission)  && ($this->session->userdata('id') !== $value['id'])) || $group['group_name'] == 'manager') {
                 $buttons = '<button type="button" class="btn btn-default" onclick="editFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></button>';
             }
 
             if (in_array('deleteUser', $this->permission)) {
                 $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
             }
-
-            $group = $this->model_users->getUserGroup($value['id']);
 
             $result['data'][$key] = array(
                 $value['username'],
@@ -135,7 +135,7 @@ class Users extends Admin_Controller
 
             $data['user_data'] = $this->model_users->getUserData($id);
 
-            $data['user_group'] = [$this->model_users->getUserGroup($id)];
+            $data['user_group'] = $this->model_users->getUserGroup($id);
 
             $data['group_data'] = $this->model_groups->getGroupData();
 

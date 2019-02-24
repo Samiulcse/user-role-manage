@@ -10,7 +10,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Stores</li>
+        <li class="active">Users</li>
       </ol>
     </section>
 
@@ -22,7 +22,7 @@
 
           <div id="messages"></div>
 
-          <?php if (in_array('createStore', $user_permission)): ?>
+          <?php if (in_array('createUser', $user_permission)): ?>
             <button class="btn btn-primary" id="addUser" data-toggle="modal" data-target="#addModal">Add User</button>
             <br /> <br />
           <?php endif;?>
@@ -155,7 +155,7 @@
 </div><!-- /.modal -->
 <?php endif;?>
 
-<?php if (in_array('updateStore', $user_permission)): ?>
+<?php if (in_array('updateUser', $user_permission)): ?>
 <!-- edit brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
   <div class="modal-dialog modal-lg" role="document">
@@ -252,7 +252,7 @@
 </div><!-- /.modal -->
 <?php endif;?>
 
-<?php if (in_array('deleteStore', $user_permission)): ?>
+<?php if (in_array('deleteUser', $user_permission)): ?>
 <!-- remove brand modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="removeModal">
   <div class="modal-dialog" role="document">
@@ -403,11 +403,13 @@ function editFunc(id)
       // groups
         let groupsDropdown = $('#egroups');
         let group_id = response.user_group.id;
+
           groupsDropdown.empty();
 
           // Populate dropdown with list of Groups
           $.each(response.group_data, function (key, value) {
             if(value.id == group_id){
+              console.log(group_id);
               groupsDropdown.append($('<option selected></option>').attr('value',value.id).text(value.group_name));
             }else
               groupsDropdown.append($('<option></option>').attr('value', value.id).text(value.group_name));
