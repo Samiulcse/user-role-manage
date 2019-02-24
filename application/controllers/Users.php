@@ -38,11 +38,11 @@ class Users extends Admin_Controller
             // button
             $buttons = '';
 
-            if (in_array('updateStore', $this->permission)) {
+            if (in_array('updateUser', $this->permission)) {
                 $buttons = '<button type="button" class="btn btn-default" onclick="editFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil"></i></button>';
             }
 
-            if (in_array('deleteStore', $this->permission)) {
+            if (in_array('deleteUser', $this->permission)) {
                 $buttons .= ' <button type="button" class="btn btn-default" onclick="removeFunc(' . $value['id'] . ')" data-toggle="modal" data-target="#removeModal"><i class="fa fa-trash"></i></button>';
             }
 
