@@ -84,5 +84,12 @@ class Model_users extends CI_Model
 
         return ($update == true) ? true : false;
     }
+	
+	public function countTotalUsers()
+	{
+		$sql = "SELECT * FROM users WHERE id != ?";
+		$query = $this->db->query($sql, array(1));
+		return $query->num_rows();
+	}
 
 }
